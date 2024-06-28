@@ -1,3 +1,4 @@
+cd /src
 mkdir secretDir
 cd /secretDir
 touch .secret
