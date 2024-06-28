@@ -1,5 +1,3 @@
-tar -xf secretGenerator.tar.gz
-cd src
 mkdir secretDir
 cd secretDir
 touch .secret
