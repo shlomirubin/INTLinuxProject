@@ -1,17 +1,64 @@
-<your secret here>      <<  Change this line. The secret must be placed in the first line
+814c5723c21e7e90a3eae36c8df3c513
 
 
 Kernel System Calls
 -------------------
-<Your Answer>
-
+After digging up online i came to the following conclusions:
+- During the whole exaction of this script every processes is saved and calculated into memory.
+- The script attempted to set some sort of settings (architecture kind) to ensure correct and optimized functionality of multi-threaded program, but failed due to invalid argument (EINVAL).
+- Afterwords the script loads 'libc' to memory.
+- Then the script check if 'welcomeToDevOpsTheHardWay' directory, when it fails to find it, the script is creating it with command 'mkdir'.
+- Some data is created in the directory with a file named 'goodLuck'.
+- 'goodLuck' has a string in it with the following text: 'There you go... tell me what i do next'.
 
 Broken Symlink
 -------------------
-<Your Answer>
+
+The issue is that originally they created a symbolic link, which is known for not sharing the same inode therefore when they moved
+the 'latest-backup.obj' into 'backup' directory they broke the connection between target and linked.
+my suggestion:
+Create a new hard link instead with the following command 'ln backup-YYYY-MM-DD.obj latest-backup.obj'.
 
 
 
 Binary Numbers
 --------------
-<Your Answer>
+1. 111 = 11 explanation below:
+            let's deal with each number separately.
+            1 (from the right side of the number) is multiplied by 2^0 therefore == 1
+            1 (the middle number) is multiplied by 2^1 therefore == 2.
+            1 is multiplied by 2^2 therefore == 8.
+            from there we sum them all - 1+2+8 == 11.
+
+   100 = 4 explanation below:
+            let's deal with each number separately.
+            1 is multiplied by 2^2 == 4.
+            0 is multiplied by 2^1 == 0.
+            0 is multiplied by 2^0 == 0.
+            from there we sum them all - 4+0+0 == 4.
+
+   10110 = 22 explanation below:
+            let's deal with each number separately.
+            1 (from the left) is multiplied by 2^4 == 16.
+            0 is multiplied by 2^3 == 0.
+            1 is multiplied by 2^2 == 4.
+            1 is multiplied by 2^1 == 2.
+            0 is multiplied by 2^0 == 0.
+            from there we sum them all - 16+0+4+2+0 == 22
+
+2. We can use the known formula 2^number - 1 to find that out, shall we?
+    2^8 == 256.
+    255 - 1 == 255.
+
+3. In order to present a negative number in decimal number after converting it from binary we can assist an method called 'Two's Complement'.
+    Example: given the following number 111011001.
+    we take the most-left number (1) and multiply it with -2^8, eventually we will get -39 as a result.
+    instead of 473 when perform the regular method.
+
+4. I would suggest to spilt the number to two components as follows:
+    let's take the number 2.4
+    first i would convert 2 to binary and then i convert 4 as well.
+    then i would attached both numbers like this: 10.100.
+
+
+
